@@ -1,10 +1,10 @@
 # DROP TABLES
 
-songplay_table_drop = "DROP TABLE songplay"
-user_table_drop = "DROP TABLE user"
-song_table_drop = "DROP TABLE song"
-artist_table_drop = "DROP TABLE artist"
-time_table_drop = "DROP TABLE time"
+songplay_table_drop = "DROP TABLE IF EXISTS songplay;"
+user_table_drop = "DROP TABLE IF EXISTS users;"
+song_table_drop = "DROP TABLE IF EXISTS song"
+artist_table_drop = "DROP TABLE IF EXISTS artist"
+time_table_drop = "DROP TABLE IF EXISTS time"
 
 # CREATE TABLES
 
@@ -16,7 +16,7 @@ songplay_table_create = ("""
 """)
 
 user_table_create = ("""
-    CREATE TABLE IF NOT EXISTS user (
+    CREATE TABLE IF NOT EXISTS users (
         user_id int, first_name varchar, last_name varchar, gender varchar, level int
     )
 """)
@@ -35,7 +35,7 @@ artist_table_create = ("""
 
 time_table_create = ("""
     CREATE TABLE IF NOT EXISTS time (
-        start_time time, hour interval hour, day interval day, week, month interval month,
+        start_time time, hour interval hour, day interval day, week int, month interval month,
         year interval year, weekday date
     )
 """)

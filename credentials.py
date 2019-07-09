@@ -1,2 +1,2 @@
 
-info {'user': 'user', 'pass': 'password'}
+info = {'user': 'sparkify', 'pass': 'Sparky1'}
